@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me dá o cu, amor, hoje?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .button-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Me dá o cu, amor, hoje?</h1>
+        <div class="button-container">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+        </div>
+    </div>
+
+    <script>
+        const naoButton = document.getElementById('nao');
+        const simButton = document.getElementById('sim');
+
+        simButton.addEventListener('click', () => {
+            window.location.href = 'https://www.youtube.com/watch?v=TNgZUJfqX_g';
+        });
+
+        naoButton.addEventListener('mouseover', () => {
+            const container = naoButton.parentElement;
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = naoButton.getBoundingClientRect();
+
+            const newTop = Math.random() * (containerRect.height - buttonRect.height);
+            const newLeft = Math.random() * (containerRect.width - buttonRect.width);
+
+            naoButton.style.position = 'absolute';
+            naoButton.style.top = `${newTop}px`;
+            naoButton.style.left = `${newLeft}px`;
+        });
+    </script>
+</body>
+</html>
